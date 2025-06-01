@@ -1,6 +1,5 @@
 import discord
-import asyncio
-from Agents.NunuAI.agent import *
+from Agents.MonarchAI.agent import *
 from discord.ext import commands
 from dotenv import load_dotenv
 from message_db import MessageDB
@@ -15,11 +14,11 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.messages = True
 
-agent = NunuAI()
+agent = MonarchAI()
 message_db = MessageDB()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-APP_NAME = "NunuAI"
+APP_NAME = "MonarchAI"
 USER_ID = "discord_bot"
 SESSION_ID = f"general_{USER_ID}" 
 

@@ -1,7 +1,5 @@
 from google.adk.agents import Agent
-from google.adk.agents import LlmAgent
 from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
 from google.adk.sessions import DatabaseSessionService
 from google.genai import types
 from dotenv import load_dotenv
@@ -12,7 +10,7 @@ import asyncio
 db_url = "sqlite:///./my_agent_data.db"
 session_service = DatabaseSessionService(db_url=db_url)
 
-class NunuAI():
+class MonarchAI():
     def __init__(self):
         load_dotenv()
         # if os.environ.get('GOOGLE_API_KEY') is not None:
@@ -20,7 +18,7 @@ class NunuAI():
         # else:
         #     print("GOOGLE_API_KEY not found")
         self.root_agent = Agent(
-            name="discord_Agent",
+            name="Monarch",
             model="gemini-2.0-flash",
             description="A discord Agent that can help with the user's queries and commands",
             instruction="""
@@ -36,7 +34,7 @@ class NunuAI():
                 """
         )
         # Set up runner and session for execution
-        self.APP_NAME = "NunuAI"
+        self.APP_NAME = "MonarchAI"
         self.USER_ID = "user_001"
         self.SESSION_ID = "session_001"
         db_url = "sqlite:///./my_agent_data.db"
@@ -150,7 +148,7 @@ class NunuAI():
 
 if __name__ == "__main__":
     try:
-        agent = NunuAI()
+        agent = MonarchAI()
         # asyncio.run(run_conversation())
         # asyncio.run(agent.show_sessions())
         # asyncio.run(agent.run_conversation())
