@@ -1,0 +1,6 @@
+/.env
+/discord.log
+/invite_url.txt
+/requirement.txt
+/venv
+/__pycache__
